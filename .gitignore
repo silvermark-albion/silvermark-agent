@@ -1,0 +1,13 @@
+# Bu repo yalniz README + Releases icindir. Kaynak kod / build ciktisi GIRMEZ.
+*.exe
+*.zip
+*.db
+*.db-shm
+*.db-wal
+*.log
+node_modules/
+dist/
+agent-config.json
+client-settings.json
+.DS_Store
+Thumbs.db
