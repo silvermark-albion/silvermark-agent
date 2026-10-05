@@ -63,6 +63,20 @@ It reads game network traffic **passively** — it does not modify, inject into,
 1. Download **`Silvermark-portable.zip`** and extract it to any folder.
 2. Run **`Silvermark.exe`**.
 
+### Windows SmartScreen warning
+
+Both packages are **unsigned** — Silvermark has no code-signing certificate yet, so Windows and your browser show an "unknown publisher" warning. This is expected. How to get past it:
+
+**If your browser blocks the download** (Edge / Chrome): open the downloads list, click the **⋯** next to the file → **Keep** → **Keep anyway**.
+
+**If you see the blue "Windows protected your PC" dialog** when running it:
+1. Click **More info**.
+2. Click **Run anyway**.
+
+**Alternative** — unblock the file before running it: right-click the downloaded file → **Properties** → tick **Unblock** at the bottom → **OK**.
+
+> The warning reflects a missing signature and no download reputation — not a detected threat. SmartScreen builds reputation per file as more people download it, so the prompts fade for a given release, then reappear for each new version until a signing certificate is in place.
+
 > On first launch, if **[Npcap](https://npcap.com/#download)** isn't installed the agent guides you through it — it's required to capture game packets.
 
 ---
@@ -117,6 +131,9 @@ On startup the agent checks the latest release. If a newer version exists, a gre
 
 **Is this allowed / will I get banned?**
 The agent only **reads** network traffic your PC already receives — the same passive approach used by the long-standing, community-wide Albion Data Project client. It does **not** modify the game, read game memory, inject code, or automate anything. Use at your own discretion.
+
+**Why does Windows say "unknown publisher" or block the installer?**
+The packages aren't code-signed yet, so SmartScreen has no reputation for them. See [Windows SmartScreen warning](#windows-smartscreen-warning) for the exact click-through steps.
 
 **Does it need admin rights?**
 No. The agent runs as a normal user. Only the one-time **Npcap** driver install needs elevation.
