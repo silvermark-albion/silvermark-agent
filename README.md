@@ -18,13 +18,13 @@
 ---
 
 > ### ⚠️ First launch
-> On first run the agent asks for your **agent key** (get it from [silvermark.app](https://silvermark.app)). It then runs quietly in the **system tray** and captures market prices automatically while you play. If **Npcap** is missing it will guide you through the one-time install.
+> On first run the agent asks for your **agent key** — sign in at [silvermark.app](https://silvermark.app) and click the **🔑** button in the top bar. It then runs quietly in the **system tray** and captures market prices automatically while you play. If **Npcap** is missing it will guide you through the one-time install.
 
 ---
 
 ## 💻 What is Silvermark Agent?
 
-Silvermark Agent is a lightweight Windows app that captures Albion Online market prices **on your own machine** as you browse the market in-game. The captured data powers price tracking, cross-city flip opportunities, gold trends and upgrade-profit analysis on **[silvermark.app](https://silvermark.app)**.
+Silvermark Agent is a lightweight Windows app that captures Albion Online market prices **on your own machine** as you browse the market in-game, plus your character's specialization levels when you log in. The data syncs to your Silvermark account and powers your scan list, cross-city flips, upgrade profit, crafting & refining calculations and trade routes on **[silvermark.app](https://silvermark.app)**.
 
 It reads game network traffic **passively** — it does not modify, inject into, or automate the game in any way.
 
@@ -38,12 +38,14 @@ It reads game network traffic **passively** — it does not modify, inject into,
 
 | Feature | Description |
 |---------|-------------|
-| 🛰️ **Market capture** | Sell/buy order prices captured the moment you open a market |
+| 🛰️ **Market capture** | Sell/buy order prices captured the moment you open a market (optional: sell offers only) |
 | 💱 **Cross-city flips** | Feeds flip analysis with tax-adjusted net profit on silvermark.app |
-| 📈 **Price history** | Builds historical price & gold trends for any item |
 | ⬆️ **Upgrade profit** | Data for enchant/upgrade cost & profit calculations |
-| 🔒 **Private mode** | Default: scans go only to your account, never to third parties |
-| 🔄 **Auto update check** | New version → an update icon appears in the window |
+| 🎓 **Spec capture** | Your specialization levels, read once per login — used for craft quality & focus calculations on the Specs page |
+| 📊 **Local trade volume** | Open an item's price history in game and its sales volume shows up in Top Traded → Local |
+| 🌍 **Auto region** | Detects the game server (Europe / Americas / Asia) and the city you are in |
+| 🔒 **Private mode** | Default: scans go only to your account, never to third parties. Optional Community mode also shares market scans with the Albion Online Data Project |
+| 🔄 **One-click update** | New version → click the update icon; the agent downloads, verifies and installs it, then restarts |
 | 🖥️ **System tray** | Runs minimized, out of your way |
 | 🌐 **15 languages** | Full UI localization |
 | 🔑 **No admin needed** | Runs as a normal user (only Npcap install needs elevation) |
@@ -57,7 +59,7 @@ It reads game network traffic **passively** — it does not modify, inject into,
 ### Installer (recommended)
 1. Download **`Silvermark-Setup.exe`** from the [latest release](https://github.com/silvermark-albion/silvermark-agent/releases/latest).
 2. Double-click it and follow the wizard — a desktop shortcut is created.
-3. Launch **Silvermark**, paste your agent key from [silvermark.app](https://silvermark.app).
+3. Launch **Silvermark** and paste your agent key — on [silvermark.app](https://silvermark.app), sign in and click **🔑** in the top bar.
 
 ### Portable (no install)
 1. Download **`Silvermark-portable.zip`** and extract it to any folder.
@@ -92,7 +94,7 @@ Both packages are **unsigned** — Silvermark has no code-signing certificate ye
 
 ## 📊 Features Showcase
 
-**Agent window** — live status, current zone, scan readiness, PRO badge.
+**Agent window** — status lights (key, Npcap, VPN, server connection, scan readiness), current zone, scan and pending-upload counters, PRO badge.
 
 <div align="center">
 <img src="docs/img/agent.png" alt="Agent window" width="440" />
@@ -104,7 +106,7 @@ Both packages are **unsigned** — Silvermark has no code-signing certificate ye
 <img src="docs/img/tray.png" alt="System tray" width="360" />
 </div>
 
-**Settings** — agent key, language, and scan options.
+**Settings** — language, agent key, "sell offers only" and Community upload options.
 
 <div align="center">
 <img src="docs/img/settings.png" alt="Settings" width="440" />
@@ -115,6 +117,7 @@ Both packages are **unsigned** — Silvermark has no code-signing certificate ye
 ## 🔒 Security & Privacy
 
 - **Private mode (default):** your scans go only to your own account — **never** to any third party.
+- **Community mode (optional, off by default):** market scans are also uploaded to the Albion Online Data Project. Your specializations and account details are never shared.
 - Your agent key is stored **encrypted** on your device (Windows DPAPI) — only decryptable under your Windows account.
 - The agent reads network traffic **passively**; it never modifies, injects into, or automates the game.
 - This package contains **no** personal keys or passwords.
@@ -123,7 +126,7 @@ Both packages are **unsigned** — Silvermark has no code-signing certificate ye
 
 ## 🔄 Updating
 
-On startup the agent checks the latest release. If a newer version exists, a green **⬇** icon appears in the window title — click it to download the newest package. Your settings and captured data are preserved.
+On startup the agent checks the latest release. If a newer version exists, a green **⬇** icon appears in the window title — click it and confirm: the agent downloads the new package, verifies it (SHA-256), installs it and reopens by itself. Your settings and captured data are preserved. If anything fails, it opens the download page instead.
 
 ---
 
@@ -145,7 +148,7 @@ Npcap lets the agent see the game's market packets. Without it, nothing can be c
 A VPN/WARP tunnels your traffic elsewhere, so the local capture driver can't see the game packets. Disable it while scanning.
 
 **Where is my data?**
-Locally on your machine. In private mode nothing is shared with third parties.
+On your machine and in your Silvermark account, so the site can show your analyses. Raw market scans are deleted automatically after about two hours. In Private mode nothing is shared with third parties; Community mode shares market scans only. Details: [Privacy Policy](https://silvermark.app/privacy).
 
 **Is it free?**
 Yes. A PRO tier unlocks extra site features, but the agent and core scanning are free.

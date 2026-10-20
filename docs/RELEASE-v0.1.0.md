@@ -1,27 +1,14 @@
-# Silvermark Agent v0.1.0
+### Silvermark Agent v0.1.0
+- Captures your Albion Online market scans and specializations and syncs them to silvermark.app.
+- Detects the game server region (Europe / Americas / Asia) automatically.
+- Tags market scans with the correct city, including the Black Market.
+- Tracks your current zone, including zones without a market such as The Underway.
+- Uploads specializations once per login, or when you press **Update specs** on the site.
+- Scans reach the website within about 30 seconds.
+- **Pending upload** counter in the agent window shows items scanned but not yet uploaded.
+- Top Traded **Local** on silvermark.app: open an item's price history chart in game and its sales volume appears on the site.
+- Stricter local access: only silvermark.app and the agent's own window can control the agent running on your PC.
 
-First public release. 🎉
+**Install:** download **Silvermark-Setup.exe** (installer) or **Silvermark-portable.zip**. Files are unsigned, so Windows SmartScreen may warn on first download — choose *More info → Run anyway*.
 
-## Highlights
-- Local market scanning agent — captures Albion Online prices on your machine.
-- Private mode (default): scans never go to any third party.
-- Feeds price history, cross-city flips and upgrade-profit analysis on [silvermark.app](https://silvermark.app).
-- Automatic update check — an update icon appears in the window when a new version ships.
-- System tray operation, 15 languages supported.
 
-## Download
-| Package | File | Notes |
-|---------|------|-------|
-| Installer | `Silvermark-Setup.exe` | Wizard + shortcut |
-| Portable | `Silvermark-portable.zip` | No install, extract & run |
-
-## Requirements
-- Windows 10/11 (64-bit)
-- Npcap (the agent guides you)
-- VPN/WARP disabled
-
-## Note
-This package contains no personal keys or passwords. Your agent key is stored encrypted (DPAPI) on your device.
-
----
-**Setup:** download `Silvermark-Setup.exe` → double-click → enter your agent key. Details: [README](https://github.com/silvermark-albion/silvermark-agent#installation)
