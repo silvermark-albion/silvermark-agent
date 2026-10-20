@@ -8,7 +8,11 @@
 - **Pending upload** counter in the agent window shows items scanned but not yet uploaded.
 - Top Traded **Local** on silvermark.app: open an item's price history chart in game and its sales volume appears on the site.
 - Stricter local access: only silvermark.app and the agent's own window can control the agent running on your PC.
+- Settings: the agent key hint now points to the key button in the site's top bar.
+- All log messages in the agent window now follow the selected language.
 
 **Install:** download **Silvermark-Setup.exe** (installer) or **Silvermark-portable.zip**. Files are unsigned, so Windows SmartScreen may warn on first download — choose *More info → Run anyway*.
+
+
 
 
